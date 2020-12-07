@@ -1,0 +1,27 @@
+@import "./base/variables";
+@import "./base/mixins";
+
+@import "./components/buttons";
+@import "./components/container";
+@import "./layout/wrapper";
+@import "./layout/header";
+@import "./layout/sections";
+@import "./layout/footer";
+
+// General styles
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media all and (max-width: 500px) {
+}

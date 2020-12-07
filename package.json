@@ -1,5 +1,5 @@
 {
-  "name": "bienia",
+  "name": "hydro-projekt",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,10 @@
   "author": "Goofson",
   "license": "ISC",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.29.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
   }
 }
