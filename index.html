@@ -13,16 +13,16 @@
 </head>
 <body>    
   <div class="wrapper">
-    <header class="header">
+    <header class="header" id="main">
       <div class="container">
         <nav class="nav">
           
-          <a href="#">
+          <a href="#main">
             <img src="./src/images/Hydro-Projekt-white.png" alt="Hydro-Projekt" class="nav__logo">
           </a>
           
           <ul class="nav__list">
-            <li class="nav__list__item"><a href="#">O nas</a></li>
+            <li class="nav__list__item"><a href="#about">O nas</a></li>
             <li class="nav__list__item"><a href="#">Realizacje</a></li>
             <li class="nav__list__item"><a href="#">Kontakt</a></li>
           </ul>
@@ -31,18 +31,67 @@
         <div class="header__content">
           <h1 class="header__content__title">Hydro-Projekt</h1>
           <p>Podciśnieniowe odwodnienia dachów</p>
-          <a href="#" class="btn btn--light"><span>Dowiedz się więcej</span></a>
+          <a href="#about" class="btn btn--light"><span>Dowiedz się więcej</span></a>
         </div>
       </div>
     </header> 
-    
+
+    <section class="offer">
+        <div class="container">
+          <h2 class="offer__header">Realizacje</h2>
+          
+          <div class="offer__content">
+            <div class="slider">
+              <button class="slider__btn slider__btn--left">❮</button>
+              <button class="slider__btn slider__btn--right">❯</button>
+              <div class="slider__slide">
+                <img src="./src/images/slide1.jpeg"
+                     alt="Elephant at sunset">
+                <div class="slider__slide__desc">
+                    <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                    <p class="slider__slide__desc__text">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
+                    </p>
+                </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./src/images/slide2.jpeg"
+                   alt="Elephant at sunset">
+              <div class="slider__slide__desc">
+                  <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                  <p class="slider__slide__desc__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
+                  </p>
+              </div>
+          </div>
+          <div class="slider__slide">
+            <img src="./src/images/slide3.jpeg"
+                 alt="Elephant at sunset">
+            <div class="slider__slide__desc">
+                <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                <p class="slider__slide__desc__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
+                </p>
+            </div>
+        </div>
+        <div class="slider__slide">
+          <img src="./src/images/slide4.jpeg"
+               alt="Elephant at sunset">
+          <div class="slider__slide__desc">
+              <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+              <p class="slider__slide__desc__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
+              </p>
+          </div>
+      </div>
+            </div>
+          </div>
+        </div>
+    </section> 
+
     <section id="about">
-      about
-    </section>
- 
-    <section id="projects">
-      projects
-    </section>   
+      o nas
+    </section> 
 
     <footer>
       footer

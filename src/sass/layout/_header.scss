@@ -1,5 +1,6 @@
 .header {
   background: $header-img no-repeat center bottom / cover;
+  background-attachment: fixed;
   height: 100vh;
 
   &__content {
@@ -9,7 +10,7 @@
 
     h1 {
       color: $light-color;
-      font-size: 60px;
+      font-size: 70px;
     }
 
     p {

@@ -1,0 +1,15 @@
+.offer {
+  background-color: $light-color;
+  color: $dark-color;
+
+  &__header {
+    padding: 15px;
+    font-size: 45px;
+    color: $dark-color;
+    text-align: center;
+  }
+
+  &__content {
+    padding-bottom: 100px;
+  }
+}

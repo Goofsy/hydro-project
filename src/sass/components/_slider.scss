@@ -1,0 +1,70 @@
+.slider {
+  margin: auto;
+  width: 70%;
+  height: 600px;
+  position: relative;
+
+  &__btn {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    margin-top: -24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $light-color;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    outline: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.7s;
+
+    &--left {
+      left: 0px;
+    }
+
+    &--right {
+      right: 0px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &__slide {
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__desc {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 400px;
+      color: $light-color;
+
+      &__title {
+        margin: 1rem 1rem 0rem 1rem;
+        padding: 3px 0px 0px 10px;
+        border-left: 4px solid $light-color;
+        font-weight: 400;
+        font-size: 1.3rem;
+      }
+
+      &__text {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 140%;
+      }
+    }
+  }
+}
