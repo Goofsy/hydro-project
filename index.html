@@ -8,23 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dosis" rel="stylesheet">
   <link rel="stylesheet" href="./src/sass/main.scss">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
   <script defer src="src/js/script.js"></script>
   <title>Document</title>
 </head>
 <body>    
   <div class="wrapper">
-    <header class="header" id="main">
+    <header class="header" id="header">
       <div class="container">
         <nav class="nav">
           
-          <a href="#main">
+          <a href="#header">
             <img src="./src/images/Hydro-Projekt-white.png" alt="Hydro-Projekt" class="nav__logo">
           </a>
           
           <ul class="nav__list">
+            <li class="nav__list__item"><a href="#offer">Realizacje</a></li>
             <li class="nav__list__item"><a href="#about">O nas</a></li>
-            <li class="nav__list__item"><a href="#">Realizacje</a></li>
-            <li class="nav__list__item"><a href="#">Kontakt</a></li>
+            <li class="nav__list__item"><a href="#contact">Kontakt</a></li>
           </ul>
           
         </nav>
@@ -36,7 +37,7 @@
       </div>
     </header> 
 
-    <section class="offer">
+    <section id="offer" class="offer">
         <div class="container">
           <h2 class="offer__header">Realizacje</h2>
           
@@ -94,7 +95,7 @@
       o nas
     </section> 
 
-    <footer>
+    <footer id="contact">
       footer
     </footer>
   </div>  

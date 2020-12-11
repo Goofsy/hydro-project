@@ -12,10 +12,10 @@ class Slider {
     this._goToSlide(0);
     this._activeDot(0);
 
-    this._addHandleDots();
-    this._addHandleBtnPrev();
-    this._addHandleBtnNext();
-    this._addHandleArrows();
+    this._addHandlerDots();
+    this._addHandlerBtnPrev();
+    this._addHandlerBtnNext();
+    this._addHandlerArrows();
   }
 
   _createDots() {
@@ -54,7 +54,7 @@ class Slider {
     dot.classList.add('slider__dots__dot--active');
   };
 
-  _addHandleDots() {
+  _addHandlerDots() {
     this._dotsContainer.addEventListener('click', this._handleDots.bind(this));
   }
 
@@ -65,20 +65,23 @@ class Slider {
     this._activeDot(slide)    
   }
 
-  _addHandleBtnPrev() {
+  _addHandlerBtnPrev() {
     this._btnPrev.addEventListener('click', this._prevSlide.bind(this));
   }
 
-  _addHandleBtnNext() {
+  _addHandlerBtnNext() {
     this._btnNext.addEventListener('click', this._nextSlide.bind(this));
   }
 
-  _addHandleArrows() {
+  _addHandlerArrows() {
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') this._prevSlide();
       if (e.key === 'ArrowRight') this._nextSlide();
     });
   }
 }
-
 new Slider();
+
+// Smooth scrolling
+const scroll = new SmoothScroll('.nav a[href*="#"]');
+  
