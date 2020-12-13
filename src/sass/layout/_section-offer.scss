@@ -1,15 +1,17 @@
 .offer {
-  background-color: $light-color;
   color: $dark-color;
-
-  .container {
-  }
-
+  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    202deg,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(26, 26, 40, 1) 19%,
+    rgba(71, 71, 80, 1) 100%
+  );
   &__header {
-    padding: 15px;
-    font-size: 45px;
-    color: $dark-color;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
   }
 
   &__content {

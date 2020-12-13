@@ -17,4 +17,15 @@
       color: $dark-color;
     }
   }
+
+  &--primary {
+    border-color: $light-color;
+    color: $light-color;
+    background-color: transparent;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
 }

@@ -2,12 +2,14 @@
 @import "./base/variables";
 @import "./base/mixins";
 @import "./base//resets";
+@import "./base/utilities";
 
 // Components
 @import "./components/buttons";
-@import "./components/container";
 @import "./components/navbar";
 @import "./components/slider";
+@import "./components/form";
+@import "./components/contact-info";
 
 // Layout
 @import "./layout/header";

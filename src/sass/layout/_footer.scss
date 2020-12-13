@@ -1,4 +1,145 @@
-footer {
-  background: #d3d3d3;
-  height: 400px;
+.contact {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    164deg,
+    rgba(24, 24, 24, 1) 0%,
+    rgba(21, 21, 35, 1) 28%,
+    rgba(61, 61, 70, 1) 100%
+  );
+
+  // background: linear-gradient(
+  //   164deg,
+  //   rgba(20, 20, 20, 1) 0%,
+  //   rgba(26, 26, 40, 1) 28%,
+  //   rgba(71, 71, 80, 1) 100%
+  // );
+
+  // &__header {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding: 50px;
+  // }
+
+  &__content {
+    display: flex;
+    padding-top: 20px;
+
+    &__form {
+      flex: 6;
+    }
+
+    .space {
+      flex: 3;
+
+      &--line {
+        border-left: 1px solid $light-color;
+        margin: auto;
+        height: 100%;
+        width: 1px;
+      }
+
+      &--hr {
+        display: none;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      flex: 6;
+
+      .subtitle {
+        margin-bottom: 35px;
+      }
+
+      .info__container {
+        .info__box {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          &:first-of-type {
+            align-items: flex-start;
+          }
+
+          i {
+            margin-right: 10px;
+            color: $primary-color;
+            font-size: 1.6rem;
+          }
+
+          p {
+            margin-bottom: 5px;
+            color: $light-color;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
 }
+
+@media (max-width: 900px) {
+  .contact {
+    padding-bottom: 40px;
+    padding-top: 50px;
+
+    // &__header {
+    //   display: none;
+    // }
+    &__content {
+      flex-direction: column;
+      padding: 0px;
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 70%;
+        margin: auto;
+        margin-bottom: 25px;
+      }
+
+      .space {
+        &--line {
+          display: none;
+        }
+
+        &--hr {
+          display: block;
+        }
+        padding: 20px 0px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .info__container {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .contact__content__form {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact__content__form {
+    min-width: 100%;
+
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  }
+} ;

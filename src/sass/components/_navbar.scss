@@ -13,24 +13,24 @@
     align-items: flex-end;
 
     &__item {
-      padding: 1rem 1rem;
+      padding: 0.5rem 1rem;
 
       a {
         color: $light-color;
-        font-size: 18px;
+        font-size: 22px;
         border-bottom: 3px transparent solid;
         padding-bottom: 0.3rem;
         transition: border-color 0.5s;
 
         &:hover {
-          border-color: $medium-color;
+          border-color: $primary-color;
         }
       }
     }
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
   .nav {
     position: flex;
     flex-direction: column;

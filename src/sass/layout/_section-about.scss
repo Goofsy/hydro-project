@@ -1,4 +1,53 @@
-#about {
-  background-color: purple;
-  height: 800px;
+.about {
+  background: $about-img no-repeat center center / cover;
+
+  height: 512px;
+
+  .overlay {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    position: relative;
+  }
+
+  // &__bg {
+  //   position: absolute;
+  //   width: 50%;
+  //   height: 100%;
+  //   background-color: rgba(0, 0, 0, 0.4);
+  // }
+
+  // &__fill {
+  //   position: absolute;
+  //   width: 50%;
+  //   height: 100%;
+  //   right: 0px;
+  // }
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    color: $light-color;
+    max-width: 45%;
+    height: 100%;
+    margin-left: 30px;
+
+    .title {
+      margin: 40px 0px 20px 0px;
+    }
+
+    &__desc {
+      font-size: 1.1rem;
+      line-height: 140%;
+    }
+  }
 }

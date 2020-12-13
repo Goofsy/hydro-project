@@ -83,5 +83,19 @@ class Slider {
 new Slider();
 
 // Smooth scrolling
-const scroll = new SmoothScroll('.nav a[href*="#"]');
+const scroll = new SmoothScroll('.header a[href*="#"]');
   
+// Sending Email
+
+const sendEmail = function() {
+  Email.send({
+    SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
+    To : 'dawid.stud@gmail.com',
+    From : "goofson555@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+  }).then(
+  message => alert(message)
+  );
+}
+
