@@ -28,15 +28,28 @@
     }
 
     &__input:focus + &__label::after,
-    &__input:valid + &__label::after {
+    &__input--filled + &__label::after {
       transform: translateX(0%);
+      border-color: $primary-color;
+    }
+
+    &__input--error + &__label::after {
+      border-color: $error-color;
+    }
+
+    &__input--error + &__label {
+      border-color: $error-color;
     }
 
     &__input:focus + &__label &__label__text,
-    &__input:valid + &__label &__label__text {
+    &__input--filled + &__label &__label__text {
       transform: translateY(-100%);
       font-size: 14px;
       color: $primary-color;
+    }
+
+    &__input--error + &__label &__label__text {
+      color: $error-color;
     }
 
     &__label {
@@ -100,16 +113,35 @@
       }
 
       .form__group__input:focus + .form__group__label,
-      .form__group__input:valid + .form__group__label {
+      .form__group__input--filled + .form__group__label {
         border: 3px solid $primary-color;
       }
 
+      .form__group__input--error + .form__group__label {
+        border: 3px solid $error-color;
+      }
+
       .form__group__input:focus + .form__group__label .form__group__label__text,
-      .form__group__input:valid
+      .form__group__input--filled
         + .form__group__label
         .form__group__label__text {
         transform: translateY(-15px);
       }
+
+      .form__group__input--error
+        + .form__group__label
+        .form__group__label__text {
+        color: $error-color;
+      }
+    }
+  }
+
+  .form__info {
+    color: $primary-color;
+    padding-top: 5px;
+
+    &--error {
+      color: $error-color;
     }
   }
 

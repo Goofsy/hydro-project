@@ -118,32 +118,33 @@
         <div class="contact__content">
           <div class="contact__content__form">
             <h3 class="subtitle">Napisz do nas</h3>
-            <form class="form">
+            <form class="form" novalidate>
               <div class="form__group">
-                <input class="form__group__input" id="name" type="text" name="name" required autocomplete="off">
+                <input class="form__group__input" id="name" type="text" name="name"  autocomplete="off">
                 <label for="name" class="form__group__label">
                   <span class="form__group__label__text">Imię</span>
                 </label>
               </div>
               <div class="form__group">
-                <input class="form__group__input" id="email" type="email" name="email" required autocomplete="off">
+                <input class="form__group__input" id="email" type="email" name="email"  autocomplete="off">
                 <label for="email" class="form__group__label">
                   <span class="form__group__label__text">E-mail</span>
                 </label>
               </div>
               <div class="form__group">
-                <input class="form__group__input" id="phone" type="number" name="phone" required autocomplete="off">
+                <input class="form__group__input" id="phone" type="tel" name="phone"  autocomplete="off">
                 <label for="phone" class="form__group__label">
                   <span class="form__group__label__text">Telefon</span>
                 </label>
               </div>
               <div class="form__group">
-                <textarea class="form__group__input" id="message" type="text" name="message" required rows="4"></textarea>
+                <textarea class="form__group__input" id="message" type="text" name="message"  rows="4"></textarea>
                 <label for="message" class="form__group__label">
                   <span class="form__group__label__text">Wiadomość</span>
                 </label>
               </div>
-              <button type="submit" class="btn btn--primary">Wyślij</button>
+              <p class="form__info"></p>
+              <button class="btn btn--primary">Wyślij</button>
             </form>
           </div>
           <div class="space">

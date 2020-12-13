@@ -27,5 +27,10 @@
       border-color: $primary-color;
       color: $primary-color;
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
   }
 }
