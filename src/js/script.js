@@ -88,7 +88,7 @@ new Slider();
 // Smooth scrolling
 const scroll = new SmoothScroll('.header a[href*="#"]');
   
-
+// Send Email
 class SendEmail {
   _form = document.querySelector('.form');
   _formInfo = document.querySelector('.form__info');
@@ -135,12 +135,9 @@ class SendEmail {
         throw new Error('Napisz coś :)');
       }
 
-      console.log(typeof _inputPhoneValue)
-
-
       const send = await this._sendEmail(_inputNameValue, _inputEmailValue, _inputPhoneValue, _inputMessageValue);
       
-      if (!send === 'OK') throw new Error('Coś poszło nie tak.');
+      if (send !== 'OK') throw new Error('Coś poszło nie tak.');
       this._resetForm();
 
     } catch (err) {
@@ -179,8 +176,8 @@ class SendEmail {
         SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
         To : 'dawid.stud@gmail.com',
         From : email,
-        Subject : `${name}, tel: ${phone}`,
-        Body : message
+        Subject : 'E-mail ze stronki',
+        Body : `${name}, tel: ${phone}, iadomość: ${message}`
       }) 
     } catch (err) {
       console.log(err);
