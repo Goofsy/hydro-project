@@ -135,6 +135,8 @@ class SendEmail {
         throw new Error('Napisz coś :)');
       }
 
+      console.log(typeof _inputPhoneValue)
+
 
       const send = await this._sendEmail(_inputNameValue, _inputEmailValue, _inputPhoneValue, _inputMessageValue);
       
@@ -174,7 +176,6 @@ class SendEmail {
   _sendEmail(name, email, phone, message) {
     try {
       return Email.send({
-        // SecureToken : "1b17ee09-4190-4d7c-bsd83-efeb38674305",   
         SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
         To : 'dawid.stud@gmail.com',
         From : email,
