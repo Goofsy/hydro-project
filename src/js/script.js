@@ -115,7 +115,7 @@ class SendEmail {
       const _inputPhoneValue = this._inputPhone.value;
       const _inputMessageValue = this._inputMessage.value;
 
-      if (_inputNameValue.length < 3 || _inputNameValue === null || _inputNameValue === ''){
+      if (_inputNameValue.trim().length < 3 || _inputNameValue === null || _inputNameValue === ''){
         this._inputName.classList.add('form__group__input--error');
         throw new Error('Imię musi zawierać przynajmniej 3 znaki!');
       }
@@ -125,12 +125,12 @@ class SendEmail {
         throw new Error('Niepoprawny adres e-mail!');
       }
 
-      if (_inputPhoneValue.length < 8 || _inputPhoneValue === null || _inputPhoneValue === ''){
+      if (_inputPhoneValue.trim().length < 8 || _inputPhoneValue === null || _inputPhoneValue === ''){
         this._inputPhone.classList.add('form__group__input--error');
         throw new Error('Nr telefonu musi zawierać przynajmniej 8 znaków!');
       }
 
-      if (_inputMessageValue === null || _inputMessageValue === ''){
+      if (_inputMessageValue.trim().length < 1 || _inputMessageValue === null || _inputMessageValue === ''){
         this._inputMessage.classList.add('form__group__input--error');
         throw new Error('Napisz coś :)');
       }
