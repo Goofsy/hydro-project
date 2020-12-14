@@ -15,10 +15,10 @@ class Slider {
     this._goToSlide(0);
     this._activeDot(0);
 
-    this._addHandlerDots();
-    this._addHandlerBtnPrev();
-    this._addHandlerBtnNext();
-    this._addHandlerArrows();
+    this._handlerDots();
+    this._handlerBtnPrev();
+    this._handlerBtnNext();
+    this._handlerArrows();
   }
 
   _createDots() {
@@ -57,7 +57,7 @@ class Slider {
     dot.classList.add('slider__dots__dot--active');
   };
 
-  _addHandlerDots() {
+  _handlerDots() {
     this._dotsContainer.addEventListener('click', this._handleDots.bind(this));
   }
 
@@ -68,15 +68,15 @@ class Slider {
     this._activeDot(slide)    
   }
 
-  _addHandlerBtnPrev() {
+  _handlerBtnPrev() {
     this._btnPrev.addEventListener('click', this._prevSlide.bind(this));
   }
 
-  _addHandlerBtnNext() {
+  _handlerBtnNext() {
     this._btnNext.addEventListener('click', this._nextSlide.bind(this));
   }
 
-  _addHandlerArrows() {
+  _handlerArrows() {
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') this._prevSlide();
       if (e.key === 'ArrowRight') this._nextSlide();
@@ -98,9 +98,53 @@ class SendEmail {
   _inputMessage = document.querySelector('#message');
   
   constructor() {
-    this._addHandlerForm();
+    this._handlerForm();
     this._addFilledClass();
     this._removeErrorClassHandler();
+  }
+
+  _handlerForm() {
+    this._form.addEventListener('submit', this._handleForm.bind(this));
+  }
+
+  async _handleForm(e) {
+    e.preventDefault();
+    try {
+      const _inputNameValue = this._inputName.value;
+      const _inputEmailValue = this._inputEmail.value;
+      const _inputPhoneValue = this._inputPhone.value;
+      const _inputMessageValue = this._inputMessage.value;
+
+      if (_inputNameValue.length < 3 || _inputNameValue === null || _inputNameValue === ''){
+        this._inputName.classList.add('form__group__input--error');
+        throw new Error('Imię musi zawierać przynajmniej 3 znaki!');
+      }
+
+      if (!this._validateEmailAddress(_inputEmailValue)) {
+        this._inputEmail.classList.add('form__group__input--error');
+        throw new Error('Niepoprawny adres e-mail!');
+      }
+
+      if (_inputPhoneValue.length < 8 || _inputPhoneValue === null || _inputPhoneValue === ''){
+        this._inputPhone.classList.add('form__group__input--error');
+        throw new Error('Nr telefonu musi zawierać przynajmniej 8 znaków!');
+      }
+
+      if (_inputMessageValue === null || _inputMessageValue === ''){
+        this._inputMessage.classList.add('form__group__input--error');
+        throw new Error('Napisz coś :)');
+      }
+
+
+      const send = await this._sendEmail(_inputNameValue, _inputEmailValue, _inputPhoneValue, _inputMessageValue);
+      
+      if (!send === 'OK') throw new Error('Coś poszło nie tak.');
+      this._resetForm();
+
+    } catch (err) {
+      this._formInfo.innerHTML = err.message;
+      this._formInfo.classList.add('form__info--error');
+    }
   }
 
   _removeErrorClassHandler() {
@@ -122,78 +166,39 @@ class SendEmail {
       }
     });
   }
-
-  _removeFilledClass() {
-    document.querySelectorAll('.form__group__input').forEach(input => {
-      input.classList.remove('form__group__input--filled');
-    });
-  }
-
-  _addHandlerForm() {
-    this._form.addEventListener('submit', this._handleForm.bind(this));
-  }
-
-  async _handleForm(e) {
-    e.preventDefault();
-    try {
-      const _inputNameValue = this._inputName.value;
-      const _inputEmailValue = this._inputEmail.value;
-      const _inputPhoneValue = this._inputPhone.value;
-      const _inputMessageValue = this._inputMessage.value;
-
-      if (_inputNameValue.length < 3 || _inputNameValue === null || _inputNameValue === ''){
-        this._inputName.classList.add('form__group__input--error');
-        throw new Error('Imię musi zawierac przynajmniej 3 znaki!');
-      }
-
-      if (!this._validateEmailAddress(_inputEmailValue)) {
-        this._inputEmail.classList.add('form__group__input--error');
-        throw new Error('Niepoprawny e-mail!');
-      }
-
-      if (_inputPhoneValue.length < 8 || _inputPhoneValue === null || _inputPhoneValue === ''){
-        this._inputPhone.classList.add('form__group__input--error');
-        throw new Error('Nr telefonu musi zawierac przynajmniej 8 znaków!');
-      }
-
-      if (_inputMessageValue === null || _inputMessageValue === ''){
-        this._inputMessage.classList.add('form__group__input--error');
-        throw new Error('Napisz coś :)');
-      }
-
-
-      const send = await this._sendEmail(_inputNameValue, _inputEmailValue, _inputPhoneValue, _inputMessageValue);
-      
-      if (!send === 'OK') throw new Error('Coś poszło nie tak.');
-      this._form.reset();
-      this._removeFilledClass();
-      this._formInfo.innerHTML = 'Wiadomośc została wysłana';
-
-    } catch (err) {
-      this._formInfo.innerHTML = err.message;
-      this._formInfo.classList.add('form__info--error');
-    }
-  }
-
   _validateEmailAddress(email) {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
   }
 
   _sendEmail(name, email, phone, message) {
-      try {
-        return Email.send({
-          // SecureToken : "1b17ee09-4190-4d7c-bsd83-efeb38674305",   
-          SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
-          To : 'dawid.stud@gmail.com',
-          From : email,
-          Subject : `${name}, tel: ${phone}`,
-          Body : message
-        }) 
-      } catch (err) {
-        console.log(err);
-      }   
-    }
+    try {
+      return Email.send({
+        // SecureToken : "1b17ee09-4190-4d7c-bsd83-efeb38674305",   
+        SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
+        To : 'dawid.stud@gmail.com',
+        From : email,
+        Subject : `${name}, tel: ${phone}`,
+        Body : message
+      }) 
+    } catch (err) {
+      console.log(err);
+    }   
+  }
+
+  _resetForm() {
+    this._form.reset();
+
+    document.querySelectorAll('.form__group__input').forEach(input => {
+      input.classList.remove('form__group__input--filled');
+    });
+
+    this._formInfo.innerHTML = 'Wiadomośc została wysłana';
+
+    setTimeout(() => {
+      this._formInfo.innerHTML = '';
+    }, 4000);
+  }
 
 }
 new SendEmail();
