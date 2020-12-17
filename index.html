@@ -1,243 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="./src/sass/main.scss">
-  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="https://kit.fontawesome.com/7b33546b62.js" crossorigin="anonymous"></script>
-  <script defer src="src/js/script.js"></script>
-  <title>Document</title>
-</head>
-<body>    
-  <div class="wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/sass/main.scss" />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7b33546b62.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="src/js/script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
     <header class="header" id="header">
-      <div class="container">
-        <nav class="nav">
-          
-          <a href="#header">
-            <img src="./src/images/Hydro-Projekt-white.png" alt="Hydro-Projekt" class="nav__logo">
-          </a>
-          
-          <ul class="nav__list">
-            <li class="nav__list__item"><a href="#offer">Oferta</a></li>
-            <li class="nav__list__item"><a href="#about">O nas</a></li>
-            <li class="nav__list__item"><a href="#contact">Kontakt</a></li>
-          </ul>
-          
-        </nav>
-        <div class="header__content">
-          <h1 class="header__content__title">Hydro-Projekt</h1>
-          <p>Podciśnieniowe odwodnienia dachów</p>
-          <a href="#offer" class="btn btn--light"><span>Dowiedz się więcej</span></a>
+      <div class="overlay">
+        <div class="container">
+          <nav class="nav">
+            <a href="#header">
+              <img
+                src="./src/images/Hydro-Projekt-white.png"
+                alt="Hydro-Projekt"
+                class="nav__logo"
+              />
+            </a>
+
+            <ul class="nav__list">
+              <li class="nav__list__item"><a href="#offer">Oferta</a></li>
+              <li class="nav__list__item"><a href="#about">O nas</a></li>
+              <li class="nav__list__item"><a href="#contact">Kontakt</a></li>
+            </ul>
+          </nav>
+          <div class="header__content">
+            <h1 class="header__content__title">Hydro-Projekt</h1>
+            <p>Podciśnieniowe odwodnienia dachów</p>
+            <a href="#offer" class="btn btn--light"
+              ><span>Dowiedz się więcej</span></a
+            >
+          </div>
         </div>
       </div>
-    </header> 
+    </header>
 
     <section id="offer" class="offer">
-        <div class="container">
-           <div class="offer__header">
-            <h2 class="title">Oferta</h2>
+      <div class="container">
+        <div class="offer__header">
+          <h2 class="title">Oferta</h2>
+        </div>
+
+        <div class="offer__content">
+          <div class="offer__content__types">
+            <div class="card">
+              <img
+                src="./src/images/podcisnieniowe.jpg"
+                alt="Podciśnieniowe odwodnienia dachów"
+                class="card__img"
+              />
+              <h4 class="card__title">Podciśnieniowe odwodnienia dachów</h4>
+            </div>
+            <div class="card">
+              <img src="./src/images/slide-1.jpeg" alt="" class="card__img" />
+              <h4 class="card__title">Grawitacyjne odwodnienia dachów</h4>
+            </div>
+            <div class="card">
+              <img src="./src/images/slide-3.jpeg" alt="" class="card__img" />
+              <h4 class="card__title">Kanalizacja podposadzkowa</h4>
+            </div>
+            <div class="card">
+              <img
+                src="./src/images/konstrukcja.jpeg"
+                alt="Konstrukcja stalowa"
+                class="card__img"
+              />
+              <h4 class="card__title">Podkonstrukcje stalowe skręcane</h4>
+            </div>
           </div>
-          
-          <div class="offer__content">
-            <div class="offer__content__types">
-              <div class="card">
-                <img src="./src/images/slide-0.jpeg" alt="" class="card__img">
-                <h4 class="card__title">Podciśnieniowe odwodnienia dachów</h4>
-              </div>
-              <div class="card">
-                <img src="./src/images/slide-1.jpeg" alt="" class="card__img">
-                <h4 class="card__title">Grawitacyjne odwodnienia dachów</h4>
-              </div>
-              <div class="card"> 
-                <img src="./src/images/slide-2.jpeg" alt="" class="card__img">
-                <h4 class="card__title">Kanalizacja podposadzkowa</h4>
-              </div>
-              <div class="card">
-                <img src="./src/images/slide-3.jpeg" alt="" class="card__img">
-                <h4 class="card__title">Podkonstrukcje stalowe skręcane</h4>
+          <div class="offer__content__example">
+            <button class="btn btn--primary btn__open--modal">
+              <h3>Kliknij aby zobaczyc przykładowe realizacje</h3>
+            </button>
+          </div>
+          <div class="offer__content__done">
+            <div class="card">
+              <i class="fas fa-user-circle fa-10x"></i>
+              <div class="card__desc">
+                <h2>26</h2>
+                <p>zadowolonych klientów</p>
               </div>
             </div>
-            <div class="offer__content__example">
-              <button class="btn btn--primary"><h3>Kliknij aby zobaczyc przykładowe realizacje</h3></button>
-            </div>
-            <div class="offer__content__done">
-              <div class="card">
-                <i class="fas fa-user-circle fa-10x"></i>
-                <div class="card__desc">
-                  <h2>26</h2>
-                  <p>zadowolonych klientów</p>
-                </div>
+            <div class="card">
+              <i class="far fa-circle fa-10x"></i>
+              <div class="card__desc">
+                <h2>13 415</h2>
+                <p>m.b. rur PEHD</p>
               </div>
-              <div class="card">
-                <i class="far fa-circle fa-10x"></i>
-                <div class="card__desc">
-                  <h2>229 645</h2>
-                  <p> m.b. rur PEHD</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <i class="far fa-square fa-10x"></i>
-                <div class="card__desc">
-                  <h2>13 415</h2>
-                  <p>m2 powierzchni odwodnionych dachów</p>
-                </div>
-              </div>
-
-              <div class="card">
-                <i class="fas fa-tint fa-10x"></i>
-                <div class="card__desc">
-                  <h2>613</h2>
-                  <p>podłączonych wpustów</p>
-                </div>
-              </div>
-              
             </div>
 
-
-
-
-            <!--
-            <div class="slider">
-              <button class="slider__btn slider__btn--prev">❮</button>
-              <button class="slider__btn slider__btn--next">❯</button>
-              <div class="slider__dots"></div>
-              <div class="slider__slide">
-                <img src="./src/images/slide-0.jpeg"
-                     alt="Elephant at sunset">
-                <div class="slider__slide__desc">
-                    <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
-                    <p class="slider__slide__desc__text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
-                    </p>
-                </div>
+            <div class="card">
+              <i class="far fa-square fa-10x"></i>
+              <div class="card__desc">
+                <h2>229 645</h2>
+                <p>m2 powierzchni odwodnionych dachów</p>
+              </div>
             </div>
+
+            <div class="card">
+              <i class="fas fa-tint fa-10x"></i>
+              <div class="card__desc">
+                <h2>613</h2>
+                <p>podłączonych wpustów</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="modal__content">
+          <div class="slider">
+            <button class="slider__btn slider__btn--prev">❮</button>
+            <button class="slider__btn slider__btn--next">❯</button>
+            <button class="slider__btn--exit">x</button>
+            <div class="slider__dots"></div>
             <div class="slider__slide">
-              <img src="./src/images/slide-1.jpeg"
-                   alt="Elephant at sunset">
+              <img src="./src/images/eloelo.jpg" alt="Elephant at sunset" />
               <div class="slider__slide__desc">
-                  <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
-                  <p class="slider__slide__desc__text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
-                  </p>
-              </div>
-          </div>
-          <div class="slider__slide">
-            <img src="./src/images/slide-2.jpeg"
-                 alt="Elephant at sunset">
-            <div class="slider__slide__desc">
                 <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
                 <p class="slider__slide__desc__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti quaerat nulla blanditiis odit est veritatis
+                  cupiditate a obcaecati quisquam, saepe numquam consequuntur
+                  suscipit et, expedita deserunt ratione officiis maiores aut.
                 </p>
+              </div>
             </div>
-        </div>
-        <div class="slider__slide">
-          <img src="./src/images/slide-3.jpeg"
-               alt="Elephant at sunset">
-          <div class="slider__slide__desc">
-              <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
-              <p class="slider__slide__desc__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quaerat nulla blanditiis odit est veritatis cupiditate a obcaecati quisquam, saepe numquam consequuntur suscipit et, expedita deserunt ratione officiis maiores aut.
-              </p>
+            <div class="slider__slide">
+              <img src="./src/images/slide-3.jpeg" alt="Elephant at sunset" />
+              <div class="slider__slide__desc">
+                <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                <p class="slider__slide__desc__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti quaerat nulla blanditiis odit est veritatis
+                  cupiditate a obcaecati quisquam, saepe numquam consequuntur
+                  suscipit et, expedita deserunt ratione officiis maiores aut.
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./src/images/slide-1.jpeg" alt="Elephant at sunset" />
+              <div class="slider__slide__desc">
+                <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                <p class="slider__slide__desc__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti quaerat nulla blanditiis odit est veritatis
+                  cupiditate a obcaecati quisquam, saepe numquam consequuntur
+                  suscipit et, expedita deserunt ratione officiis maiores aut.
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./src/images/slide-3.jpeg" alt="Elephant at sunset" />
+              <div class="slider__slide__desc">
+                <h3 class="slider__slide__desc__title">Magazyn GLS</h3>
+                <p class="slider__slide__desc__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti quaerat nulla blanditiis odit est veritatis
+                  cupiditate a obcaecati quisquam, saepe numquam consequuntur
+                  suscipit et, expedita deserunt ratione officiis maiores aut.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="modal--overlay"></div>
       </div>
-            </div>
-             -->
-          </div>
-        </div>
-    </section> 
+    </section>
 
-    <section id="about" class="about">      
+    <section id="about" class="about">
       <div class="overlay">
-        <!-- <div class="about__bg"></div>
-        <div class="about__fill"></div> -->
         <div class="container">
           <div class="about__content">
             <h2 class="title">O nas</h2>
             <div class="about__content__desc">
-              <p><span>Hydro-Projekt</span> działa na rynku od 2018 roku, zajmujemy się podciśnieniowym odwadnianiem płaskich dachów wielkopowierzchniowych. </p>
-              <p>Specjalizujemy się głównie w instalacji podciśnieniowego odwodnienia dachu, lecz wykonujemy również wszystkie instalacje w systemie HDPE takie jak kanalizacja podposadzkowa, sanitarna.</p>
-              <p>Zajmujemy się również montażem konstrukcji pod centrale wentylacyjne.</p>
+              <p>
+                <span>Hydro-Projekt</span> działa na rynku od 2018 roku,
+                zajmujemy się podciśnieniowym odwadnianiem płaskich dachów
+                wielkopowierzchniowych.
+              </p>
+              <p>
+                Specjalizujemy się głównie w instalacji podciśnieniowego
+                odwodnienia dachu, lecz wykonujemy również wszystkie instalacje
+                w systemie HDPE takie jak kanalizacja podposadzkowa, sanitarna.
+              </p>
+              <p>
+                Zajmujemy się również montażem konstrukcji pod centrale
+                wentylacyjne.
+              </p>
               <p>Usługi wykonujemy na terenie całego kraju.</p>
             </div>
           </div>
         </div>
-          
       </div>
-    </section> 
+    </section>
 
     <footer id="contact" class="contact">
       <div class="container">
-        <!-- <div class="contact__header">
-          <h2 class="title">Kontakt</h2>
-        </div> -->
         <div class="contact__content">
           <div class="contact__content__form">
             <h3 class="subtitle">Napisz do nas</h3>
             <form class="form" novalidate>
               <div class="form__group">
-                <input class="form__group__input" id="name" type="text" name="name"  autocomplete="off">
+                <input
+                  class="form__group__input"
+                  id="name"
+                  type="text"
+                  name="name"
+                  autocomplete="off"
+                />
                 <label for="name" class="form__group__label">
                   <span class="form__group__label__text">Imię</span>
                 </label>
               </div>
               <div class="form__group">
-                <input class="form__group__input" id="email" type="email" name="email"  autocomplete="off">
+                <input
+                  class="form__group__input"
+                  id="email"
+                  type="email"
+                  name="email"
+                  autocomplete="off"
+                />
                 <label for="email" class="form__group__label">
                   <span class="form__group__label__text">E-mail</span>
                 </label>
               </div>
               <div class="form__group">
-                <input class="form__group__input" id="phone" type="number" type="number" name="phone"  autocomplete="off">
+                <input
+                  class="form__group__input"
+                  id="phone"
+                  type="number"
+                  type="number"
+                  name="phone"
+                  autocomplete="off"
+                />
                 <label for="phone" class="form__group__label">
                   <span class="form__group__label__text">Telefon</span>
                 </label>
               </div>
               <div class="form__group">
-                <textarea class="form__group__input" id="message" type="text" name="message"  rows="4"></textarea>
+                <textarea
+                  class="form__group__input"
+                  id="message"
+                  type="text"
+                  name="message"
+                  rows="4"
+                ></textarea>
                 <label for="message" class="form__group__label">
                   <span class="form__group__label__text">Wiadomość</span>
                 </label>
               </div>
+              <div class="form__spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+
               <p class="form__info"></p>
+
               <button class="btn btn--primary">Wyślij</button>
             </form>
           </div>
           <div class="space">
             <div class="space--line"></div>
             <div class="space--hr">
-              <hr>
+              <hr />
             </div>
           </div>
           <div class="contact__content__info">
             <div class="info__container">
               <h3 class="subtitle">Dane Kontaktowe</h3>
-              <div class="info__box">                  
-                <i class="fas fa-building"></i>   
+              <div class="info__box">
+                <i class="fas fa-building"></i>
                 <span>
                   <p>HYDRO-PROJEKT s.c.</p>
                   <p>Dawid Baran, Rafał Bieniek</p>
                   <p>NIP: 944-225-92-25</p>
-                  <p>REGON: 369834771</p>                    
+                  <p>REGON: 369834771</p>
                 </span>
-                
               </div>
 
               <div class="info__box">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>
-                  <p>ul. Lipowa 73</p>                  
+                  <p>ul. Lipowa 73</p>
                   <p>32-051 Jaśkowice</p>
                 </span>
               </div>
-              
+
               <div class="info__box">
                 <i class="fas fa-phone"></i>
                 <p>530 267 427, 794 317 417</p>
@@ -249,9 +321,8 @@
               </div>
             </div>
           </div>
-        </div>    
-      </div>    
+        </div>
+      </div>
     </footer>
-  </div>  
-</body>
+  </body>
 </html>

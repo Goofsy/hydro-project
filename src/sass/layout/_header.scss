@@ -2,14 +2,23 @@
   background: $header-img no-repeat fixed center bottom / cover;
   height: 100vh;
 
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
   &__content {
     text-align: center;
     position: relative;
     top: 27%;
 
-    h1 {
+    &__title {
       color: $light-color;
       font-size: 70px;
+      span {
+        color: $primary-color;
+      }
     }
 
     p {

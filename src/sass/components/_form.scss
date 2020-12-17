@@ -2,6 +2,43 @@
   width: 100%;
   margin-top: 5px;
 
+  .form__spinner {
+    display: none;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    padding-top: 10px;
+  }
+  .form__spinner div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid $primary-color;
+    border-radius: 50%;
+    animation: form__spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $primary-color transparent transparent transparent;
+  }
+  .form__spinner div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .form__spinner div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .form__spinner div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes form__spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   &__group {
     position: relative;
     height: 50px;
@@ -13,7 +50,7 @@
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
     input:-webkit-autofill:active {
-      -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+      -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
       -webkit-transition-delay: 9999s;
     }
 
@@ -23,7 +60,7 @@
       margin: 0;
     }
 
-    input[type="number"] {
+    input[type='number'] {
       -moz-appearance: textfield;
     }
 
@@ -81,7 +118,7 @@
     }
 
     &__label::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0px;
       bottom: -1px;
@@ -92,7 +129,7 @@
       transition: transform 0.3s ease;
     }
 
-    &:last-of-type {
+    &:nth-last-of-type(2) {
       height: 150px;
       margin-top: 20px;
 

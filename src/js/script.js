@@ -1,102 +1,112 @@
 import 'core-js';
 import 'regenerator-runtime/runtime';
 
-// class Slider {
-//   _slides = document.querySelectorAll('.slider__slide');
-//   _btnPrev = document.querySelector('.slider__btn--prev');
-//   _btnNext = document.querySelector('.slider__btn--next');
-//   _dotsContainer = document.querySelector('.slider__dots');
+class Slider {
+  _slides = document.querySelectorAll('.slider__slide');
+  _btnPrev = document.querySelector('.slider__btn--prev');
+  _btnNext = document.querySelector('.slider__btn--next');
+  _dotsContainer = document.querySelector('.slider__dots');
 
-//   _curSlide = 0;
-//   _maxSlide = this._slides.length;
+  _curSlide = 0;
+  _maxSlide = this._slides.length;
 
-//   constructor() {
-//     this._createDots();
-//     this._goToSlide(0);
-//     this._activeDot(0);
+  constructor() {
+    this._createDots();
+    this._goToSlide(0);
+    this._activeDot(0);
 
-//     this._handlerDots();
-//     this._handlerBtnPrev();
-//     this._handlerBtnNext();
-//     this._handlerArrows();
-//   }
+    this._handlerDots();
+    this._handlerBtnPrev();
+    this._handlerBtnNext();
+    this._handlerArrows();
+  }
 
-//   _createDots() {
-//     this._slides.forEach((_, i) => { 
-//       this._dotsContainer.insertAdjacentHTML('beforeend', `<button class="slider__dots__dot" data-slide="${i}"></button>`);
-//     });
-//   }
+  _createDots() {
+    Array.prototype.forEach.call(this._slides, (_, i) => {
+      this._dotsContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class="slider__dots__dot" data-slide="${i}"></button>`
+      );
+    });
+  }
 
-//   _goToSlide(curSlide) {
-//     this._slides.forEach((slide, i) => {
-//       slide.style.transform = `translateX(${100 * (i - curSlide)}%)`
-//     })
-//   };
+  _goToSlide(curSlide) {
+    Array.prototype.forEach.call(this._slides, (slide, i) => {
+      slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
+    });
+  }
 
-//   _prevSlide() {
-//     if (this._curSlide === 0) this._curSlide = this._maxSlide - 1;
-//     else { this._curSlide-- };
+  _prevSlide() {
+    if (this._curSlide === 0) this._curSlide = this._maxSlide - 1;
+    else {
+      this._curSlide--;
+    }
 
-//     this._goToSlide(this._curSlide);
-//     this._activeDot(this._curSlide);   
-//   };
+    this._goToSlide(this._curSlide);
+    this._activeDot(this._curSlide);
+  }
 
-//   _nextSlide() {
-//     if (this._curSlide === this._maxSlide - 1) this._curSlide = 0;
-//     else { this._curSlide++ };
+  _nextSlide() {
+    if (this._curSlide === this._maxSlide - 1) this._curSlide = 0;
+    else {
+      this._curSlide++;
+    }
 
-//     this._goToSlide(this._curSlide);   
-//     this._activeDot(this._curSlide); 
-//   };
+    this._goToSlide(this._curSlide);
+    this._activeDot(this._curSlide);
+  }
 
-//   _activeDot(curSlide) {
-//     const dots = document.querySelectorAll('.slider__dots__dot');
-//     dots.forEach(dot => dot.classList.remove('slider__dots__dot--active'));
-  
-//     const dot = this._dotsContainer.querySelector(`[data-slide='${curSlide}']`);
-//     dot.classList.add('slider__dots__dot--active');
-//   };
+  _activeDot(curSlide) {
+    const dots = document.querySelectorAll('.slider__dots__dot');
+    Array.prototype.forEach.call(dots, dot =>
+      dot.classList.remove('slider__dots__dot--active')
+    );
 
-//   _handlerDots() {
-//     this._dotsContainer.addEventListener('click', this._handleDots.bind(this));
-//   }
+    const dot = this._dotsContainer.querySelector(`[data-slide='${curSlide}']`);
+    dot.classList.add('slider__dots__dot--active');
+  }
 
-//   _handleDots(e) {    
-//     if (!e.target.classList.contains('slider__dots__dot')) return;
-//     const {slide} = e.target.dataset;
-//     this._goToSlide(slide);
-//     this._activeDot(slide)    
-//   }
+  _handlerDots() {
+    this._dotsContainer.addEventListener('click', this._handleDots.bind(this));
+  }
 
-//   _handlerBtnPrev() {
-//     this._btnPrev.addEventListener('click', this._prevSlide.bind(this));
-//   }
+  _handleDots(e) {
+    if (!e.target.classList.contains('slider__dots__dot')) return;
+    const { slide } = e.target.dataset;
+    this._goToSlide(slide);
+    this._activeDot(slide);
+  }
 
-//   _handlerBtnNext() {
-//     this._btnNext.addEventListener('click', this._nextSlide.bind(this));
-//   }
+  _handlerBtnPrev() {
+    this._btnPrev.addEventListener('click', this._prevSlide.bind(this));
+  }
 
-//   _handlerArrows() {
-//     document.addEventListener('keydown', e => {
-//       if (e.key === 'ArrowLeft') this._prevSlide();
-//       if (e.key === 'ArrowRight') this._nextSlide();
-//     });
-//   }
-// }
-// new Slider();
+  _handlerBtnNext() {
+    this._btnNext.addEventListener('click', this._nextSlide.bind(this));
+  }
+
+  _handlerArrows() {
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft' || e.key === 'Left') this._prevSlide();
+      if (e.key === 'ArrowRight' || e.key === 'Right') this._nextSlide();
+    });
+  }
+}
+new Slider();
 
 // Smooth scrolling
 const scroll = new SmoothScroll('.header a[href*="#"]');
-  
+
 // Send Email
 class SendEmail {
   _form = document.querySelector('.form');
   _formInfo = document.querySelector('.form__info');
+  _formSpinner = document.querySelector('.form__spinner');
   _inputName = document.querySelector('#name');
   _inputEmail = document.querySelector('#email');
   _inputPhone = document.querySelector('#phone');
   _inputMessage = document.querySelector('#message');
-  
+
   constructor() {
     this._handlerForm();
     this._addFilledClass();
@@ -115,7 +125,11 @@ class SendEmail {
       const _inputPhoneValue = this._inputPhone.value;
       const _inputMessageValue = this._inputMessage.value;
 
-      if (_inputNameValue.trim().length < 3 || _inputNameValue === null || _inputNameValue === ''){
+      if (
+        _inputNameValue.trim().length < 3 ||
+        _inputNameValue === null ||
+        _inputNameValue === ''
+      ) {
         this._inputName.classList.add('form__group__input--error');
         throw new Error('Imię musi zawierać przynajmniej 3 znaki!');
       }
@@ -125,21 +139,36 @@ class SendEmail {
         throw new Error('Niepoprawny adres e-mail!');
       }
 
-      if (_inputPhoneValue.trim().length < 8 || _inputPhoneValue === null || _inputPhoneValue === ''){
+      if (
+        _inputPhoneValue.trim().length < 8 ||
+        _inputPhoneValue === null ||
+        _inputPhoneValue === ''
+      ) {
         this._inputPhone.classList.add('form__group__input--error');
         throw new Error('Nr telefonu musi zawierać przynajmniej 8 znaków!');
       }
 
-      if (_inputMessageValue.trim().length < 1 || _inputMessageValue === null || _inputMessageValue === ''){
+      if (
+        _inputMessageValue.trim().length < 1 ||
+        _inputMessageValue === null ||
+        _inputMessageValue === ''
+      ) {
         this._inputMessage.classList.add('form__group__input--error');
         throw new Error('Napisz coś :)');
       }
 
-      const send = await this._sendEmail(_inputNameValue, _inputEmailValue, _inputPhoneValue, _inputMessageValue);
-      
+      this._formSpinner.style.display = 'inline-block';
+
+      const send = await this._sendEmail(
+        _inputNameValue,
+        _inputEmailValue,
+        _inputPhoneValue,
+        _inputMessageValue
+      );
+      this._formSpinner.style.display = 'none';
+
       if (send !== 'OK') throw new Error('Coś poszło nie tak.');
       this._resetForm();
-
     } catch (err) {
       this._formInfo.innerHTML = err.message;
       this._formInfo.classList.add('form__info--error');
@@ -159,7 +188,8 @@ class SendEmail {
 
   _addFilledClass() {
     this._form.addEventListener('change', e => {
-      if (e.target.value.length === 0 || e.target.value === '')  e.target.classList.remove('form__group__input--filled');
+      if (e.target.value.length === 0 || e.target.value === '')
+        e.target.classList.remove('form__group__input--filled');
       else {
         e.target.classList.add('form__group__input--filled');
       }
@@ -173,21 +203,22 @@ class SendEmail {
   _sendEmail(name, email, phone, message) {
     try {
       return Email.send({
-        SecureToken : "1b17ee09-4190-4d7c-bd83-efeb38674305",   
-        To : 'dawid.stud@gmail.com',
-        From : email,
-        Subject : 'E-mail ze stronki',
-        Body : `${name}, tel: ${phone}, iadomość: ${message}`
-      }) 
+        SecureToken: '1b17ee09-4190-4d7c-bd83-efeb38674305',
+        To: 'dawid.stud@gmail.com',
+        From: email,
+        Subject: 'E-mail ze stronki',
+        Body: `${name}, tel: ${phone}, iadomość: ${message}`,
+      });
     } catch (err) {
       console.log(err);
-    }   
+    }
   }
 
   _resetForm() {
     this._form.reset();
+    const _formInputs = document.querySelectorAll('.form__group__input');
 
-    document.querySelectorAll('.form__group__input').forEach(input => {
+    Array.prototype.forEach.call(_formInputs, input => {
       input.classList.remove('form__group__input--filled');
     });
 
@@ -197,6 +228,49 @@ class SendEmail {
       this._formInfo.innerHTML = '';
     }, 4000);
   }
-
 }
 new SendEmail();
+
+// Modal
+class Modal {
+  _modal = document.querySelector('.modal');
+  _modalContent = document.querySelector('.modal__content');
+  _btnOpen = document.querySelector('.btn__open--modal');
+  _btnClose = document.querySelector('.slider__btn--exit');
+  _modalOverlay = document.querySelector('.modal--overlay');
+  constructor() {
+    this._openModalBtnHandler();
+    this._closeModalBtnHandler();
+    this._closeModalOverlayHandler();
+    this._closeModalEscHandler();
+  }
+
+  _openModalBtnHandler() {
+    this._btnOpen.addEventListener('click', () => {
+      this._modal.style.visibility = 'visible';
+      this._modalContent.style.height = '600px';
+      this._modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    });
+  }
+
+  _closeModalBtnHandler() {
+    this._btnClose.addEventListener('click', () => this._closeModal());
+  }
+
+  _closeModalOverlayHandler() {
+    this._modalOverlay.addEventListener('click', () => this._closeModal());
+  }
+
+  _closeModalEscHandler() {
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' || e.key === 'Esc') this._closeModal();
+    });
+  }
+
+  _closeModal() {
+    this._modal.style.visibility = 'hidden';
+    this._modalContent.style.height = '0px';
+    this._modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+  }
+}
+new Modal();
