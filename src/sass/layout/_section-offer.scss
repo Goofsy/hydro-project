@@ -52,6 +52,8 @@
     &__types {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template: 'a b c d';
+
       justify-items: center;
       padding-bottom: 10px;
 

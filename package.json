@@ -10,19 +10,20 @@
   "author": "Goofson",
   "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "autoprefixer": "^9.0.0",
     "parcel-bundler": "^1.12.4",
     "postcss-modules": "^4.0.0",
-    "sass": "^1.29.0",
-    "smooth-scroll": "^16.1.3"
+    "sass": "^1.29.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "core-js": "^2.6.12"
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": true
+      "autoprefixer": {
+        "grid": true
+      }
     }
   }
 }
