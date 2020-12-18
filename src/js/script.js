@@ -94,8 +94,20 @@ class Slider {
 }
 new Slider();
 
-// Smooth scrolling
-const scroll = new SmoothScroll('.header a[href*="#"]');
+// Smooth scrolling jQuery
+$('.header a').on('click', function (e) {
+  if (this.hash !== '') {
+    e.preventDefault();
+
+    const hash = this.hash;
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top,
+      },
+      800
+    );
+  }
+});
 
 // Send Email
 class SendEmail {
@@ -207,7 +219,7 @@ class SendEmail {
         To: 'dawid.stud@gmail.com',
         From: email,
         Subject: 'E-mail ze stronki',
-        Body: `${name}, tel: ${phone}, iadomość: ${message}`,
+        Body: `${name}, tel: ${phone}, Wiadomość: ${message}`,
       });
     } catch (err) {
       console.log(err);
