@@ -51,15 +51,27 @@
   &__content {
     &__types {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-template: 'a b c d';
-
-      justify-items: center;
+      grid-template-columns: repeat(4, minmax(300px, 1fr));
+      grid-template: 'card1 card2 card3 card4';
       padding-bottom: 10px;
 
       .card {
         width: 300px;
         height: 280px;
+        justify-self: center;
+
+        &:nth-child(1) {
+          grid-area: card1;
+        }
+        &:nth-child(2) {
+          grid-area: card2;
+        }
+        &:nth-child(3) {
+          grid-area: card3;
+        }
+        &:nth-child(4) {
+          grid-area: card4;
+        }
 
         &__img {
           width: 100%;
@@ -83,8 +95,8 @@
 
     &__done {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      justify-items: center;
+      grid-template-columns: repeat(4, minmax(300px, 1fr));
+      grid-template: 'card1 card2 card3 card4';
       padding-top: 40px;
 
       .card {
@@ -93,6 +105,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-self: center;
+
+        &:nth-child(1) {
+          grid-area: card1;
+        }
+        &:nth-child(2) {
+          grid-area: card2;
+        }
+        &:nth-child(3) {
+          grid-area: card3;
+        }
+        &:nth-child(4) {
+          grid-area: card4;
+        }
 
         i {
           color: $primary-color;
@@ -124,16 +150,24 @@
       max-width: 80%;
       margin: auto;
 
-      &__types {
-        grid-template-columns: 1fr 1fr;
-      }
-
       &__done {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+
+        grid-template:
+          'card1 card2'
+          'card3 card4';
 
         .card {
           padding-bottom: 45px;
         }
+      }
+
+      &__types {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+
+        grid-template:
+          'card1 card2'
+          'card3 card4';
       }
     }
   }
@@ -150,14 +184,26 @@
     }
     &__content {
       max-width: 100%;
+    }
+  }
+}
 
-      &__types {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
+@media (max-width: 700px) {
+  .offer__content {
+    &__types {
+      grid-template:
+        'card1'
+        'card2'
+        'card3'
+        'card4';
+    }
 
-      &__done {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
+    &__done {
+      grid-template:
+        'card1'
+        'card2'
+        'card3'
+        'card4';
     }
   }
 }
