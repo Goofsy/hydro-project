@@ -35,6 +35,11 @@
       z-index: 10;
       transition: all 0.6s ease;
     }
+
+    &--open {
+      height: 100vh;
+      overflow-y: hidden;
+    }
   }
 
   &__header {

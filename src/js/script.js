@@ -262,6 +262,7 @@ class Modal {
       this._modal.style.visibility = 'visible';
       this._modalContent.style.height = '600px';
       this._modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      document.body.style.overflow = 'hidden';
     });
   }
 
@@ -283,6 +284,7 @@ class Modal {
     this._modal.style.visibility = 'hidden';
     this._modalContent.style.height = '0px';
     this._modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    document.body.style.overflow = 'auto';
   }
 }
 new Modal();
