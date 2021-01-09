@@ -22,7 +22,7 @@ class Slider {
   }
 
   _createDots() {
-    Array.prototype.forEach.call(this._slides, (_, i) => {
+    [...this._slides].forEach((_, i) => {
       this._dotsContainer.insertAdjacentHTML(
         'beforeend',
         `<button class="slider__dots__dot" data-slide="${i}"></button>`
@@ -31,7 +31,7 @@ class Slider {
   }
 
   _goToSlide(curSlide) {
-    Array.prototype.forEach.call(this._slides, (slide, i) => {
+    [...this._slides].forEach((slide, i) => {
       slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
     });
   }
@@ -57,10 +57,8 @@ class Slider {
   }
 
   _activeDot(curSlide) {
-    const dots = document.querySelectorAll('.slider__dots__dot');
-    Array.prototype.forEach.call(dots, dot =>
-      dot.classList.remove('slider__dots__dot--active')
-    );
+    const [...dots] = document.querySelectorAll('.slider__dots__dot');
+    dots.forEach(dot => dot.classList.remove('slider__dots__dot--active'));
 
     const dot = this._dotsContainer.querySelector(`[data-slide='${curSlide}']`);
     dot.classList.add('slider__dots__dot--active');
@@ -228,9 +226,9 @@ class SendEmail {
 
   _resetForm() {
     this._form.reset();
-    const _formInputs = document.querySelectorAll('.form__group__input');
+    const [...formInputs] = document.querySelectorAll('.form__group__input');
 
-    Array.prototype.forEach.call(_formInputs, input => {
+    formInputs.forEach(input => {
       input.classList.remove('form__group__input--filled');
     });
 
