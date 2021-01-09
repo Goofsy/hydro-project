@@ -1,7 +1,7 @@
 // Base
 @import './base/variables';
 @import './base//resets';
-@import './base/utilities';
+@import './base/base';
 
 // Components
 @import './components/buttons';
@@ -10,7 +10,7 @@
 @import './components/form';
 
 // Layout
-@import './layout/header';
-@import './layout/section-about';
-@import './layout/section-offer';
-@import './layout/footer';
+@import './sections/header';
+@import './sections/about';
+@import './sections/offer';
+@import './sections/footer';

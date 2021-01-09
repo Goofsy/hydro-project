@@ -12,8 +12,8 @@ class Slider {
 
   constructor() {
     this._createDots();
-    this._goToSlide(0);
-    this._activeDot(0);
+    this._goToSlide();
+    this._activeDot();
 
     this._handlerDots();
     this._handlerBtnPrev();
@@ -30,7 +30,7 @@ class Slider {
     });
   }
 
-  _goToSlide(curSlide) {
+  _goToSlide(curSlide = 0) {
     [...this._slides].forEach((slide, i) => {
       slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
     });
@@ -56,7 +56,7 @@ class Slider {
     this._activeDot(this._curSlide);
   }
 
-  _activeDot(curSlide) {
+  _activeDot(curSlide = 0) {
     const [...dots] = document.querySelectorAll('.slider__dots__dot');
     dots.forEach(dot => dot.classList.remove('slider__dots__dot--active'));
 
