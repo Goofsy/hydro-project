@@ -15,10 +15,10 @@ class Slider {
     this._goToSlide();
     this._activeDot();
 
-    this._handlerDots();
-    this._handlerBtnPrev();
-    this._handlerBtnNext();
-    this._handlerArrows();
+    this._dotsHandler();
+    this._btnPrevHandler();
+    this._btnNextHandler();
+    this._arrowsHandler();
   }
 
   _createDots() {
@@ -64,7 +64,7 @@ class Slider {
     dot.classList.add('slider__dots__dot--active');
   }
 
-  _handlerDots() {
+  _dotsHandler() {
     this._dotsContainer.addEventListener('click', this._handleDots.bind(this));
   }
 
@@ -75,15 +75,15 @@ class Slider {
     this._activeDot(slide);
   }
 
-  _handlerBtnPrev() {
+  _btnPrevHandler() {
     this._btnPrev.addEventListener('click', this._prevSlide.bind(this));
   }
 
-  _handlerBtnNext() {
+  _btnNextHandler() {
     this._btnNext.addEventListener('click', this._nextSlide.bind(this));
   }
 
-  _handlerArrows() {
+  _arrowsHandler() {
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft' || e.key === 'Left') this._prevSlide();
       if (e.key === 'ArrowRight' || e.key === 'Right') this._nextSlide();
